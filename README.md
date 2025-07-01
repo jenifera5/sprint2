@@ -7,7 +7,7 @@ Este repositorio contiene los ejercicios desarrollados durante el **Sprint 2** d
 ## 📑 Tabla de Contenidos
 
 1. [Tema 1 – Mysql queries](#tema-1--Mysql-queries)
-2. [Tema 2 – Estructura de datos - MySQL](#tema-2--Estructura-de-datos--MySQL)
+2. [Tema 2 – Estructura de datos MySQL](#tema-2--Estructura-de-datos-MySQL)
 3. [Tema 3 – MongoDB](#tema-3--MongoDB)
 4. [Tema 4 – MongoDB queries](#tema-4--MongoDB-queries)
 5. [Requisitos](#requisitos)
@@ -28,7 +28,7 @@ Este repositorio contiene los ejercicios desarrollados durante el **Sprint 2** d
 
 ---
 
-## 🧾Tema 2 – Estructura de datos - MySQL
+## 🧾Tema 2 – Estructura de datos MySQL
 
 **Objetivo:**
 
