@@ -337,7 +337,7 @@ order by p.apellido1, p.apellido2, p.nombre;
 
 -- leff join y right join
  -- ej 10
-  select 
+  select distinct
     d.nombre as 'nombre del departamento',
     p.apellido1 as 'primer apellido',
     p.apellido2 as 'segundo apellido',
@@ -349,7 +349,6 @@ order by p.apellido1, p.apellido2, p.nombre;
  order by  d.nombre, p.apellido1, p.apellido2, p.nombre;
  -- ej 11
  select 
-	d.nombre as 'nombre del departamento',
     p.apellido1 as 'primer apellido',
     p.apellido2 as 'segundo apellido',
     p.nombre as 'nombre del profesor/a'
@@ -426,4 +425,5 @@ left join asignatura a on g.id = a.id_grado
 group by g.id, g.nombre
 having count(a.id) > 40
 order by count(a.id) desc;
+
 

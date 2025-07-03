@@ -47,50 +47,24 @@ select  nombre from producto;
 select  nombre,precio from producto;
 
 -- ej 3
-select * from producto;
+show columns from producto;
 
 -- ej 4
-alter table producto add tipo_moneda varchar(30);
-update producto set tipo_moneda ='EUR' where codigo = 1;
-update producto set tipo_moneda ='USD' where codigo = 2;
-update producto set tipo_moneda ='EUR' where codigo = 3;
-update producto set tipo_moneda ='EUR' where codigo = 4;
-update producto set tipo_moneda ='USD' where codigo = 5;
-update producto set tipo_moneda ='EUR' where codigo = 6;
-update producto set tipo_moneda ='EUR' where codigo = 7;
-update producto set tipo_moneda ='USD' where codigo = 8;
-update producto set tipo_moneda ='EUR' where codigo = 9;
-update producto set tipo_moneda ='EUR' where codigo = 10;
-update producto set tipo_moneda ='USD' where codigo = 11;
-SELECT nombre,
- precio as 'precio original',
- tipo_moneda ,
- case 
-   when tipo_moneda = 'USD' then round(precio*0.9174, 2)
-   else precio
- end as precio_en_EUR,
- case 
-   when tipo_moneda ='EUR' then round(precio*1.08, 2)
-   else precio
-  end as precio_en_USD
- from producto;
-
+select 
+   nombre,
+   precio as 'precio en euros',
+   round(precio*1.08,2) as 'precio en dolares'
+   from producto;
 -- 1 USD = 0.9174 EUR
 -- 1 EUR = 1.08 USD
 
 -- ej 5
 
-select nombre as 'nombre del producto ',
-  case
-   when tipo_moneda ='USD' then round(precio*0.9174,2)
-   else precio
-   end 'euros',
-  case
-   when tipo_moneda ='EUR' then round(precio*1.08,2)
-   else precio
-   end 'dolares estadounidenses'
-    
- from producto;
+select
+ upper(nombre) as 'nombre del producto ',
+round(precio,2) as 'euros',
+round(1.08,2) as 'dolares estadounidenses'
+from producto;
 
 -- ej 6
 -- update producto
@@ -146,3 +120,5 @@ limit 5;
 select  codigo,nombre 
 from fabricante
 limit 2 offset 3;
+
+
