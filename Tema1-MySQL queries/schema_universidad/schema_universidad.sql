@@ -382,7 +382,7 @@ select
  from asignatura
  where id_profesor is null;
  -- ej 15
- select 
+ select distinct
 	 d.nombre as 'nombre del departamento'
 from departamento d
 left join profesor pr  on d.id=pr.id_departamento
@@ -426,4 +426,21 @@ group by g.id, g.nombre
 having count(a.id) > 40
 order by count(a.id) desc;
 
+-- ej 21
+select 
+    g.nombre as 'nombre del grado',
+    a.tipo as'tipo de asignatura',
+    sum(a.creditos) as 'suma de creditos'
+ from grado g
+ join asignatura a on g.id=a.id_grado
+ group  by g.nombre,a.tipo
+ order by g.nombre,a.tipo;
 
+-- ej 22
+select 
+    ce.anyo_inicio as 'año de inicio',
+    count(distinct am.id_alumno)as'numero de alumnos/as matriculados/as '
+    from curso_escolar ce
+    join alumno_se_matricula_asignatura  am on ce.id= am.id_curso_escolar
+    group by ce.anyo_inicio
+    order by ce.anyo_inicio;
